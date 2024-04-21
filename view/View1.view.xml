@@ -1,0 +1,30 @@
+<mvc:View
+    controllerName="myportifolioapp.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+>
+    <Page
+        id="page"
+        showHeader="false"
+    >
+        <content>
+            <tnt:ToolHeader>
+                <Title text="{i18n>title}" />
+                <ToolbarSpacer />
+                <SearchField width="300px" />
+                <ToolbarSpacer />
+                <Button icon="sap-icon://dark-mode" />
+                <Avatar />
+            </tnt:ToolHeader>
+            <HBox >
+                <GenericTile header="app01" class="sapUiSmallMargin">
+                    <TileContent>
+                        <Text text="Description"></Text>
+                    </TileContent>
+                </GenericTile>
+            </HBox>
+        </content>
+    </Page>
+</mvc:View>
