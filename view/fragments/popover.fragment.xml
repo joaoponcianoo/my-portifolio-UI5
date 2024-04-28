@@ -1,0 +1,32 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+>
+    <Popover
+        id="idPopover"
+        showHeader="false"
+        placement="Bottom"
+    >
+        <List
+            class="sapUiTinyMargin"
+            width="90%"
+        >
+            <items>
+                <CustomListItem>
+                    <Link
+                        text="Linkedin"
+                        href="https://www.linkedin.com/in/joao-ponciano/"
+                        target="_blank"
+                    />
+                </CustomListItem>
+                <CustomListItem>
+                    <Link
+                        text="GitHub"
+                        href="https://github.com/joaoponcianoo"
+                        target="_blank"
+                    />
+                </CustomListItem>
+            </items>
+        </List>
+    </Popover>
+</c:FragmentDefinition>

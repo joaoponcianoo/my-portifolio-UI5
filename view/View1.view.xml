@@ -15,7 +15,7 @@
                 <SearchField width="300px" />
                 <ToolbarSpacer />
                 <Button icon="sap-icon://dark-mode" press="onChangeTheme"/>
-                <Avatar src="./img/avatar.jpg" displaySize="XS" showBorder="true"/>
+                <Avatar src="./img/avatar.jpg" displaySize="XS" showBorder="true" press="onAvatarPress"/>
             </tnt:ToolHeader>
         </customHeader>
         <content>

@@ -23,24 +23,10 @@ sap.ui.define([
             createAppList: function() {
                 const oAppList = [
                     {
-                        header: "App01",
-                        description: "App01 Description",
-                        class: "sapUiSmallMargin"
-                    },
-                    {
-                        header: "App02",
-                        description: "App02 Description",
-                        class: "sapUiSmallMargin"
-                    },
-                    {
-                        header: "App03",
-                        description: "App03 Description",
-                        class: "sapUiSmallMargin"
-                    },
-                    {
-                        header: "App04",
-                        description: "App04 Description",
-                        class: "sapUiSmallMargin"
+                        header: "Login Page",
+                        description: "Login Page with SAP UI5",
+                        class: "sapUiSmallMargin",
+                        url: "https://joaoponcianoo.github.io/login-page-ui5/"
                     }
                 ];
                 return oAppList;

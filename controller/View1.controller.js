@@ -5,12 +5,22 @@ sap.ui.define([
     //sap/m
     "sap/m/GenericTile",
     "sap/m/TileContent",
-    "sap/m/Text"
+    "sap/m/Text",
+
+    //sap/ui
+    "sap/ui/core/Fragment"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, models, GenericTile, TileContent, Text) {
+    function (
+        Controller,
+        models,
+        GenericTile,
+        TileContent,
+        Text,
+        Fragment
+    ) {
         "use strict";
 
         return Controller.extend("myportifolioapp.controller.View1", {
@@ -30,13 +40,15 @@ sap.ui.define([
                 const oContent = this.byId("idHBoxMainContent");
 
                 oAppList.forEach(item => {
-                    let sText = new Text({text: item.description});
+                    let sText = new Text({ text: item.description });
 
                     let oTileContent = new TileContent();
                     oTileContent.setContent(sText);
 
                     let oGenericTile = new GenericTile({
-                        header: item.header
+                        header: item.header,
+                        url: item.url,
+                        press: ""
                     });
 
                     oGenericTile.addStyleClass(item.class);
@@ -44,6 +56,26 @@ sap.ui.define([
 
                     oContent.addItem(oGenericTile);
                 });
+            },
+
+            onAvatarPress: function (oEvent) {
+                const oButton = oEvent.getSource();
+                const oView = this.getView();
+
+                if (!this._oPopover) {
+                    this._oPopover = Fragment.load({
+                        id: oView.getId(),
+                        name: "myportifolioapp.view.fragments.popover",
+                        controller: this
+                    }).then((oPopover) => {
+                        oView.addDependent(oPopover);
+                        return oPopover;
+                    })
+                }
+
+                this._oPopover.then((oPopover) => {
+                    oPopover.openBy(oButton);
+                })
             }
         });
     });
